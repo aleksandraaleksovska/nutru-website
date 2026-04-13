@@ -1,16 +1,13 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import blogMicro from '../assets/blog-micro.jpg'
+import blogAdditives from '../assets/blog-additives.jpg'
+import blogSnacks from '../assets/blog-snacks.jpg'
 
 const articleImages = [
-  {
-    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80',
-  },
+  { image: blogMicro },
+  { image: blogAdditives },
+  { image: blogSnacks },
 ]
 
 export function ResearchSection() {

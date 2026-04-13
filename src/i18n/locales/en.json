@@ -5,7 +5,7 @@
   },
   "hero": {
     "eyebrow": "Nutrition Intelligence",
-    "headline": "See what's really inside your food.",
+    "headline": "Discover what’s truly inside.",
     "subheadline": "Decode labels, contaminants, and composition in seconds—so every trip to the store ends with clarity, not guesswork.",
     "appStore": {
       "downloadOn": "Download on the",
@@ -53,16 +53,16 @@
     "heading": "Research & insights",
     "articles": [
       {
-        "title": "How mineral balance shapes daily vitality",
-        "alt": "Fresh vegetables and ingredients on a surface"
+        "title": "Microplastics in Bottled Water: The Hidden Truth in Every Sip",
+        "alt": "Close-up of a water bottle"
       },
       {
-        "title": "Reading labels without the overwhelm",
-        "alt": "Produce at a market stall"
+        "title": "Food Additives & E-Numbers: Safe or Scary?",
+        "alt": "Food additives and ingredient labels"
       },
       {
-        "title": "Emerging research on trace contaminants",
-        "alt": "Laboratory glassware in soft light"
+        "title": "Most \"Healthy\" Snacks Are Ultra-Processed — Here's Why That Matters",
+        "alt": "Packaged snack products on a shelf"
       }
     ]
   },

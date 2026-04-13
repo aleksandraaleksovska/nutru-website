@@ -65,25 +65,27 @@ export function Header() {
             >
               {t('nav.getApp')}
             </a>
-            {/* Language switcher — two static pills, always at the far right */}
-            <div className={cn(
-              'flex items-center rounded-full border text-xs font-semibold uppercase tracking-wide overflow-hidden',
-              scrolled ? 'border-stone-200' : 'border-stone-300',
-            )}>
-              {(['en', 'mk'] as const).map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => i18n.changeLanguage(lang)}
-                  aria-label={`Switch to ${lang.toUpperCase()}`}
-                  className={cn(
-                    'px-3 py-1.5 transition-colors',
-                    i18n.language === lang
-                      ? 'bg-stone-900 text-white'
-                      : 'text-stone-500 hover:text-stone-900',
+            {/* Language switcher — EN | MK with a plain divider, no border */}
+            <div className="flex items-center gap-0 text-xs font-semibold uppercase tracking-wide">
+              {(['en', 'mk'] as const).map((lang, idx) => (
+                <>
+                  {idx > 0 && (
+                    <span key={`sep-${lang}`} className="text-stone-300 select-none">|</span>
                   )}
-                >
-                  {lang.toUpperCase()}
-                </button>
+                  <button
+                    key={lang}
+                    onClick={() => i18n.changeLanguage(lang)}
+                    aria-label={`Switch to ${lang.toUpperCase()}`}
+                    className={cn(
+                      'px-2 py-1 transition-colors',
+                      i18n.language === lang
+                        ? 'text-stone-900'
+                        : 'text-stone-400 hover:text-stone-700',
+                    )}
+                  >
+                    {lang.toUpperCase()}
+                  </button>
+                </>
               ))}
             </div>
           </nav>

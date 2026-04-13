@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "about": "About",
+    "getApp": "Get the app"
+  },
+  "hero": {
+    "eyebrow": "Nutrition Intelligence",
+    "headline": "See what's really inside your food.",
+    "subheadline": "Decode labels, contaminants, and composition in seconds—so every trip to the store ends with clarity, not guesswork.",
+    "appStore": {
+      "downloadOn": "Download on the",
+      "appStore": "App Store",
+      "getItOn": "Get it on",
+      "googlePlay": "Google Play"
+    }
+  },
+  "phoneShowcase": {
+    "cards": {
+      "additives": "Additives",
+      "additives_detail": "None detected",
+      "ingredients": "Ingredients",
+      "ingredients_detail": "2 total",
+      "sugar": "Sugar",
+      "sugar_detail": "4.0g per 100g",
+      "allergens": "Allergens",
+      "allergens_detail": "Contains milk",
+      "protein": "Protein",
+      "protein_detail": "10g per serving",
+      "calories": "Calories",
+      "calories_detail": "54 kcal"
+    },
+    "phoneAlt": "Nutru app analysis screen"
+  },
+  "feature": {
+    "heading": "Scan before you buy",
+    "bullets": [
+      {
+        "title": "Scan any product",
+        "body": "Point your camera at a label or barcode—Nutru reads ingredients and sourcing signals in one pass."
+      },
+      {
+        "title": "Get instant analysis",
+        "body": "See how compounds stack up against trusted thresholds, with plain-language context you can act on."
+      },
+      {
+        "title": "Make smarter choices",
+        "body": "Compare options side by side and build habits that match your health goals without the noise."
+      }
+    ]
+  },
+  "research": {
+    "eyebrow": "From the desk",
+    "heading": "Research & insights",
+    "articles": [
+      {
+        "title": "How mineral balance shapes daily vitality",
+        "alt": "Fresh vegetables and ingredients on a surface"
+      },
+      {
+        "title": "Reading labels without the overwhelm",
+        "alt": "Produce at a market stall"
+      },
+      {
+        "title": "Emerging research on trace contaminants",
+        "alt": "Laboratory glassware in soft light"
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Questions",
+    "items": [
+      {
+        "q": "What kinds of products can I scan?",
+        "a": "Packaged foods, beverages, supplements, and many personal care items with scannable codes or legible ingredient panels."
+      },
+      {
+        "q": "Where does Nutru get its reference ranges?",
+        "a": "We synthesize peer-reviewed guidance, regulatory limits, and independent testing literature—always cited in-app so you can dig deeper."
+      },
+      {
+        "q": "Does Nutru replace medical advice?",
+        "a": "No. Nutru is a decision-support tool. For allergies, conditions, or treatment plans, follow your clinician's guidance."
+      },
+      {
+        "q": "Is my data private?",
+        "a": "Scans are processed to deliver results; we minimize retention and never sell personal health profiles."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Nutrition intelligence for people who value substance over hype.",
+    "copyright": "All rights reserved.",
+    "cols": [
+      {
+        "title": "Product",
+        "links": ["Features", "Pricing", "Updates"]
+      },
+      {
+        "title": "Company",
+        "links": ["About", "Careers", "Press"]
+      },
+      {
+        "title": "Legal",
+        "links": ["Privacy", "Terms", "Contact"]
+      }
+    ]
+  },
+  "about": {
+    "s1":  "Imagine a world where understanding your food is effortless.",
+    "s2a": "Clean ingredients.",
+    "s2b": "Clear signals.",
+    "s2c": "No guesswork.",
+    "s3":  "But today, labels are complex.",
+    "s4":  "Ingredients are hard to interpret.",
+    "s5":  "Important details stay hidden.",
+    "s6":  "Most people care what they eat.",
+    "s7":  "They just can't see what matters.",
+    "s8":  "So choices become assumptions.",
+    "s9":  "And assumptions become habits.",
+    "s10": "But that's starting to change.",
+    "s11": "People are reading labels.",
+    "s12": "Questioning ingredients.",
+    "s13": "Looking beyond marketing claims.",
+    "s14": "Nutru exists to make the invisible visible.",
+    "s15": "Scan any product.",
+    "s16": "See what's really inside.",
+    "s17a": "Ingredients.",
+    "s17b": "Contaminants.",
+    "s17c": "Quality signals.",
+    "s18": "Explained in seconds.",
+    "s19a": "No hype.",
+    "s19b": "No noise.",
+    "s19c": "Just clarity.",
+    "s20": "Because understanding what you eat shouldn't be hard.",
+    "s21": "It should be natural.",
+    "cta": "Get the app"
+  }
+}

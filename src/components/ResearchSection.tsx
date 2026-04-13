@@ -1,27 +1,22 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
-const articles = [
+const articleImages = [
   {
-    title: 'How mineral balance shapes daily vitality',
-    image:
-      'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
-    alt: 'Fresh vegetables and ingredients on a surface',
+    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
   },
   {
-    title: 'Reading labels without the overwhelm',
-    image:
-      'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80',
-    alt: 'Produce at a market stall',
+    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80',
   },
   {
-    title: 'Emerging research on trace contaminants',
-    image:
-      'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80',
-    alt: 'Laboratory glassware in soft light',
+    image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80',
   },
 ]
 
 export function ResearchSection() {
+  const { t } = useTranslation()
+  const articles = t('research.articles', { returnObjects: true }) as Array<{ title: string; alt: string }>
+
   return (
     <section className="bg-[var(--color-surface)] px-5 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-6xl">
@@ -30,9 +25,10 @@ export function ResearchSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-nutru)]"
+          className="text-center text-xs font-semibold uppercase tracking-[0.2em]"
+          style={{ color: '#9FC113' }}
         >
-          From the desk
+          {t('research.eyebrow')}
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 14 }}
@@ -41,12 +37,12 @@ export function ResearchSection() {
           transition={{ duration: 0.5, delay: 0.04, ease: [0.22, 1, 0.36, 1] }}
           className="mt-3 text-center text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl"
         >
-          Research & insights
+          {t('research.heading')}
         </motion.h2>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {articles.map((a, i) => (
             <motion.article
-              key={a.title}
+              key={i}
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -60,7 +56,7 @@ export function ResearchSection() {
               <a href="#" className="block">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
-                    src={a.image}
+                    src={articleImages[i].image}
                     alt={a.alt}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                   />

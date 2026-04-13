@@ -1,133 +1,131 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { AboutStorySection } from '../components/about/AboutStorySection'
 
 const headline =
   'text-balance font-semibold tracking-tight text-stone-900 text-[1.65rem] leading-[1.2] sm:text-3xl sm:leading-[1.15] md:text-[2.125rem] md:leading-[1.12] lg:text-[2.375rem]'
 
 export function AboutPage() {
+  const { t } = useTranslation()
+
   return (
     <div className="bg-white">
-      {/* Vision */}
+
+      {/* 1 — alone */}
       <AboutStorySection>
-        <p className={headline}>
-          Imagine a world where understanding your food is effortless.
-        </p>
+        <p className={headline}>{t('about.s1')}</p>
       </AboutStorySection>
 
+      {/* 2 — Clean / Clear / No guesswork */}
       <AboutStorySection>
         <div className="mx-auto max-w-lg space-y-6 sm:space-y-8">
-          <p className={headline}>Clean ingredients.</p>
-          <p className={headline}>Clear signals.</p>
-          <p className={headline}>No guesswork.</p>
+          <p className={headline}>{t('about.s2a')}</p>
+          <p className={headline}>{t('about.s2b')}</p>
+          <p className={headline}>{t('about.s2c')}</p>
         </div>
       </AboutStorySection>
 
-      {/* The Problem */}
-      <AboutStorySection>
-        <p className={headline}>But today, labels are complex.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>Ingredients are hard to interpret.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>Important details stay hidden.</p>
-      </AboutStorySection>
-
-      {/* Human Reality */}
-      <AboutStorySection>
-        <p className={headline}>Most people care what they eat.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>They just can't see what matters.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>So choices become assumptions.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>And assumptions become habits.</p>
-      </AboutStorySection>
-
-      {/* Transition: The Shift */}
-      <AboutStorySection>
-        <p className={`${headline} text-stone-800`}>But that's starting to change.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>People are reading labels.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>Questioning ingredients.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>Looking beyond marketing claims.</p>
-      </AboutStorySection>
-
-      {/* Product Introduction */}
-      <AboutStorySection>
-        <p className={headline}>Nutru exists to make the invisible visible.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>Scan any product.</p>
-      </AboutStorySection>
-
-      <AboutStorySection>
-        <p className={headline}>See what's really inside.</p>
-      </AboutStorySection>
-
+      {/* 3 — labels / interpret / hidden — all three together */}
       <AboutStorySection>
         <div className="mx-auto max-w-lg space-y-6 sm:space-y-8">
-          <p className={headline}>Ingredients.</p>
-          <p className={headline}>Contaminants.</p>
-          <p className={headline}>Quality signals.</p>
+          <p className={headline}>{t('about.s3')}</p>
+          <p className={headline}>{t('about.s4')}</p>
+          <p className={headline}>{t('about.s5')}</p>
         </div>
       </AboutStorySection>
 
-      <AboutStorySection>
-        <p className={headline}>Explained in seconds.</p>
-      </AboutStorySection>
-
+      {/* 4 — care / can't see — paired */}
       <AboutStorySection>
         <div className="mx-auto max-w-lg space-y-6 sm:space-y-8">
-          <p className={headline}>No hype.</p>
-          <p className={headline}>No noise.</p>
-          <p className={headline}>Just clarity.</p>
+          <p className={headline}>{t('about.s6')}</p>
+          <p className={headline}>{t('about.s7')}</p>
         </div>
       </AboutStorySection>
 
-      {/* Philosophy */}
+      {/* 5 — choices / habits — paired */}
       <AboutStorySection>
-        <p className={headline}>Because understanding what you eat shouldn't be hard.</p>
+        <div className="mx-auto max-w-lg space-y-6 sm:space-y-8">
+          <p className={headline}>{t('about.s8')}</p>
+          <p className={headline}>{t('about.s9')}</p>
+        </div>
       </AboutStorySection>
 
+      {/* 6 — starting to change — alone */}
       <AboutStorySection>
-        <p className={`${headline} font-normal text-stone-600`}>It should be natural.</p>
+        <p className={`${headline} text-stone-800`}>{t('about.s10')}</p>
       </AboutStorySection>
 
-      {/* Call to Action */}
+      {/* 7 — reading / questioning / looking — all three together */}
+      <AboutStorySection>
+        <div className="mx-auto max-w-lg space-y-6 sm:space-y-8">
+          <p className={headline}>{t('about.s11')}</p>
+          <p className={headline}>{t('about.s12')}</p>
+          <p className={headline}>{t('about.s13')}</p>
+        </div>
+      </AboutStorySection>
+
+      {/* 8 — invisible visible — alone */}
+      <AboutStorySection>
+        <p className={headline}>{t('about.s14')}</p>
+      </AboutStorySection>
+
+      {/* 9 — Ingredients / Contaminants / Quality signals — grouped */}
+      <AboutStorySection>
+        <div className="mx-auto max-w-lg space-y-6 sm:space-y-8">
+          <p className={headline}>{t('about.s17a')}</p>
+          <p className={headline}>{t('about.s17b')}</p>
+          <p className={headline}>{t('about.s17c')}</p>
+        </div>
+      </AboutStorySection>
+
+      {/* 10 — Explained in seconds — alone */}
+      <AboutStorySection>
+        <p className={headline}>{t('about.s18')}</p>
+      </AboutStorySection>
+
+      {/* 11 — No hype / No noise / Just clarity — grouped */}
+      <AboutStorySection>
+        <div className="mx-auto max-w-lg space-y-6 sm:space-y-8">
+          <p className={headline}>{t('about.s19a')}</p>
+          <p className={headline}>{t('about.s19b')}</p>
+          <p className={headline}>{t('about.s19c')}</p>
+        </div>
+      </AboutStorySection>
+
+      {/* 12 — shouldn't be hard / natural — paired */}
+      <AboutStorySection>
+        <div className="mx-auto max-w-lg space-y-6 sm:space-y-8">
+          <p className={headline}>{t('about.s20')}</p>
+          <p className={`${headline} font-normal text-stone-600`}>{t('about.s21')}</p>
+        </div>
+      </AboutStorySection>
+
+      {/* 13 — Scan any product / See what's really inside — paired */}
+      <AboutStorySection>
+        <div className="mx-auto max-w-lg space-y-6 sm:space-y-8">
+          <p className={headline}>{t('about.s15')}</p>
+          <p className={headline}>{t('about.s16')}</p>
+        </div>
+      </AboutStorySection>
+
+      {/* 14 — CTA */}
       <AboutStorySection className="pb-24 sm:pb-28">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: false, amount: 0.6 }}
           transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
           <Link
             to="/#download"
             className="inline-flex rounded-full bg-stone-900 px-9 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
           >
-            Get the app
+            {t('about.cta')}
           </Link>
         </motion.div>
       </AboutStorySection>
+
     </div>
   )
 }

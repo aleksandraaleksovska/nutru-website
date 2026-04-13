@@ -1,27 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
-
-const faqs = [
-  {
-    q: 'What kinds of products can I scan?',
-    a: 'Packaged foods, beverages, supplements, and many personal care items with scannable codes or legible ingredient panels.',
-  },
-  {
-    q: 'Where does Nutru get its reference ranges?',
-    a: 'We synthesize peer-reviewed guidance, regulatory limits, and independent testing literature—always cited in-app so you can dig deeper.',
-  },
-  {
-    q: 'Does Nutru replace medical advice?',
-    a: 'No. Nutru is a decision-support tool. For allergies, conditions, or treatment plans, follow your clinician’s guidance.',
-  },
-  {
-    q: 'Is my data private?',
-    a: 'Scans are processed to deliver results; we minimize retention and never sell personal health profiles.',
-  },
-]
+import { useTranslation } from 'react-i18next'
 
 export function FAQSection() {
   const [open, setOpen] = useState<number | null>(0)
+  const { t } = useTranslation()
+  const faqs = t('faq.items', { returnObjects: true }) as Array<{ q: string; a: string }>
 
   return (
     <section className="border-t border-stone-200/80 bg-white px-5 py-20 sm:px-8 sm:py-28">
@@ -33,13 +17,13 @@ export function FAQSection() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="text-center text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl"
         >
-          Questions
+          {t('faq.heading')}
         </motion.h2>
         <div className="mt-12 divide-y divide-stone-200/90">
           {faqs.map((item, i) => {
             const isOpen = open === i
             return (
-              <div key={item.q} className="py-1">
+              <div key={i} className="py-1">
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}

@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion'
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { cn } from '../lib/cn'
 import webMockup from '../assets/web-mockup.png'
 
@@ -7,63 +8,63 @@ type CardTone = 'warning' | 'safe' | 'neutral'
 /** Layout side: drives horizontal convergence — right cards move left, left cards move right */
 type CardSide = 'left' | 'right'
 
-const cards: Array<{
-  label: string
+const cardsMeta: Array<{
+  labelKey: string
+  detailKey: string
   tone: CardTone
-  detail: string
   position: string
   parallax: number
   side: CardSide
 }> = [
   {
-    label: 'Additives',
+    labelKey: 'phoneShowcase.cards.additives',
+    detailKey: 'phoneShowcase.cards.additives_detail',
     tone: 'safe',
-    detail: 'None detected',
     position:
       'left-[0%] top-[5%] md:left-[5%] md:top-[12%] lg:left-[8%] lg:top-[15%]',
     parallax: 1.12,
     side: 'left',
   },
   {
-    label: 'Ingredients',
-    tone: 'safe',
-    detail: 'Milk, cultures',
+    labelKey: 'phoneShowcase.cards.ingredients',
+    detailKey: 'phoneShowcase.cards.ingredients_detail',
+    tone: 'neutral',
     position:
       'right-[0%] top-[7%] md:right-[5%] md:top-[14%] lg:right-[9%] lg:top-[17%]',
     parallax: 1.02,
     side: 'right',
   },
   {
-    label: 'Sugar',
-    tone: 'safe',
-    detail: '4.0g per 100g',
+    labelKey: 'phoneShowcase.cards.sugar',
+    detailKey: 'phoneShowcase.cards.sugar_detail',
+    tone: 'neutral',
     position:
       'left-[-3%] top-[36%] md:left-[2%] md:top-[40%] lg:left-[4%] lg:top-[41%]',
     parallax: 0.95,
     side: 'left',
   },
   {
-    label: 'Processing',
-    tone: 'safe',
-    detail: 'Minimally processed',
+    labelKey: 'phoneShowcase.cards.allergens',
+    detailKey: 'phoneShowcase.cards.allergens_detail',
+    tone: 'neutral',
     position:
       'right-[-3%] top-[34%] md:right-[2%] md:top-[38%] lg:right-[5%] lg:top-[39%]',
     parallax: 1.08,
     side: 'right',
   },
   {
-    label: 'Protein',
-    tone: 'safe',
-    detail: 'High protein',
+    labelKey: 'phoneShowcase.cards.protein',
+    detailKey: 'phoneShowcase.cards.protein_detail',
+    tone: 'neutral',
     position:
       'left-[1%] bottom-[9%] md:left-[8%] md:bottom-[13%] lg:left-[12%] lg:bottom-[16%]',
     parallax: 1.18,
     side: 'left',
   },
   {
-    label: 'Allergens',
+    labelKey: 'phoneShowcase.cards.calories',
+    detailKey: 'phoneShowcase.cards.calories_detail',
     tone: 'neutral',
-    detail: 'Contains milk',
     position:
       'right-[1%] bottom-[7%] md:right-[7%] md:bottom-[11%] lg:right-[11%] lg:bottom-[14%]',
     parallax: 1.0,
@@ -244,6 +245,7 @@ function FloatingCard({
 
 function PhoneFrame({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
   const { x, y } = usePhoneScrollMotion(scrollYProgress)
+  const { t } = useTranslation()
 
   return (
     <motion.div
@@ -252,8 +254,21 @@ function PhoneFrame({ scrollYProgress }: { scrollYProgress: MotionValue<number> 
     >
       <img
         src={webMockup}
-        alt="Nutru app analysis screen"
+        alt={t('phoneShowcase.phoneAlt')}
         className="w-full h-auto drop-shadow-[0_32px_64px_-24px_rgba(0,0,0,0.35)]"
+      />
+      {/* Bottom fade overlay */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-[45%]"
+        style={{
+          background: `linear-gradient(
+            to bottom,
+            rgba(250, 250, 249, 0) 0%,
+            rgba(250, 250, 249, 0.6) 25%,
+            rgba(250, 250, 249, 0.9) 50%,
+            rgba(250, 250, 249, 1) 75%
+          )`,
+        }}
       />
     </motion.div>
   )
@@ -265,11 +280,12 @@ export function PhoneShowcase() {
     target: ref,
     offset: ['start end', 'end start'],
   })
+  const { t } = useTranslation()
 
   return (
     <section
       ref={ref}
-      className="relative overflow-visible px-3 pb-12 pt-2 sm:px-6 sm:pb-16"
+      className="relative overflow-visible px-3 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-12"
     >
       <div className="relative mx-auto min-h-[min(60vh,28rem)] max-w-6xl">
         <div className="relative mx-auto min-h-[420px] w-full max-w-[min(100%,26rem)] md:max-w-5xl md:min-h-[480px] lg:min-h-[520px]">
@@ -277,16 +293,16 @@ export function PhoneShowcase() {
             <PhoneFrame scrollYProgress={scrollYProgress} />
           </div>
 
-          {cards.map((c, i) => (
+          {cardsMeta.map((c, i) => (
             <FloatingCard
-              key={c.label}
+              key={c.labelKey}
               scrollYProgress={scrollYProgress}
               index={i}
               parallaxMult={c.parallax}
               side={c.side}
-              label={c.label}
+              label={t(c.labelKey)}
               tone={c.tone}
-              detail={c.detail}
+              detail={t(c.detailKey)}
               className={c.position}
             />
           ))}

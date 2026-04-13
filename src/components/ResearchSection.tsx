@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import blogMicro from '../assets/blog-micro.jpg'
 import blogAdditives from '../assets/blog-additives.jpg'
 import blogSnacks from '../assets/blog-snacks.jpg'
 
 const articleImages = [
-  { image: blogMicro },
-  { image: blogAdditives },
-  { image: blogSnacks },
+  { image: blogMicro, href: '/research/microplastics' },
+  { image: blogAdditives, href: '/research/additives' },
+  { image: blogSnacks, href: '/research/snacks' },
 ]
 
 export function ResearchSection() {
@@ -50,7 +51,7 @@ export function ResearchSection() {
               }}
               className="group overflow-hidden rounded-2xl bg-white shadow-[0_1px_0_rgba(0,0,0,0.06)] ring-1 ring-stone-200/80"
             >
-              <a href="#" className="block">
+              <Link to={articleImages[i].href} className="block">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={articleImages[i].image}
@@ -62,7 +63,7 @@ export function ResearchSection() {
                     {a.title}
                   </h3>
                 </div>
-              </a>
+              </Link>
             </motion.article>
           ))}
         </div>

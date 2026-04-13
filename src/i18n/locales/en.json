@@ -134,5 +134,122 @@
     "s20": "Because understanding what you eat shouldn't be hard.",
     "s21": "It should be natural.",
     "cta": "Get the app"
+  },
+  "articles": {
+    "back": "Back",
+    "microplastics": {
+      "imageAlt": "Close-up of a water bottle",
+      "title": "Microplastics in Bottled Water: The Hidden Truth in Every Sip",
+      "paragraphs": [
+        "You grab a bottle of water thinking it's the cleanest, safest option available. It's sealed, portable, and widely trusted. But what if that same bottle contains tiny plastic particles you can't even see?",
+        "Microplastics are extremely small pieces of plastic, typically less than 5 millimeters in size. In bottled water, these particles often originate from the packaging itself — the bottle, the cap, or even the bottling process. Heat, sunlight, and time can cause plastic to degrade and shed particles. The friction from twisting caps can release tiny fragments, and microplastics can already be present before the bottle is even sealed.",
+        "Recent studies have found that many bottled water brands contain microplastics — sometimes hundreds or even thousands of particles per liter. While scientists are still determining long-term effects, we know microplastics can carry chemicals like BPA and phthalates, which may interfere with hormones. Very small particles (nanoplastics) might even enter human cells.",
+        "Microplastics aren't just in bottled water — they're everywhere: oceans, soil, food, and even the air. Plastic bottles are part of a much larger environmental issue. Millions are produced every minute worldwide, and many end up as waste, breaking down into microplastics over time.",
+        "You can make smarter choices: switch to tap water if it's safe in your area, use reusable bottles made of glass or stainless steel, avoid leaving plastic bottles in heat, and filter your water for an extra layer of precaution. Small changes can reduce both your exposure and your environmental footprint.",
+        "Microplastics in bottled water are a reminder that convenience often comes with hidden trade-offs. While research is ongoing, awareness is the first step toward better choices."
+      ]
+    },
+    "snacks": {
+      "imageAlt": "Packaged snack products on a shelf",
+      "title": "Most \"Healthy\" Snacks Are Ultra-Processed — Here's Why That Matters",
+      "intro": [
+        "You reach for a granola bar, a rice cake, or a bag of veggie chips, feeling good about your choice. The packaging says \"natural,\" \"high protein,\" or \"only 100 calories.\" But what's actually inside?",
+        "The reality is that many snacks marketed as healthy are ultra-processed foods — and that distinction matters more than any single nutrient on the label."
+      ],
+      "sections": [
+        {
+          "heading": "1. What does \"ultra-processed\" actually mean?",
+          "paragraphs": [
+            "Ultra-processed foods (UPFs) are industrial formulations made mostly from substances extracted from foods — like refined starches, hydrogenated oils, added sugars, and protein isolates — combined with additives that enhance flavor, texture, color, and shelf life.",
+            "They're not just \"processed\" in the way that cooking or freezing is processing. UPFs are engineered products, designed in labs to be hyper-palatable, convenient, and long-lasting."
+          ]
+        },
+        {
+          "heading": "2. Why snacks are often the biggest offenders",
+          "paragraphs": [
+            "The snack industry has mastered the art of health marketing. A product can be gluten-free, vegan, and \"made with real fruit\" — and still be ultra-processed. The front of the package tells one story; the ingredients list tells another.",
+            "Common \"healthy\" snacks that are often ultra-processed: protein bars, flavored rice cakes, veggie chips and straws, fruit-flavored gummies, granola and granola bars, low-fat or diet crackers."
+          ]
+        },
+        {
+          "heading": "3. Why does it matter beyond calories?",
+          "paragraphs": [
+            "Research increasingly links high UPF consumption to a range of health concerns — not because of any single ingredient, but because of the overall pattern of eating heavily industrialized food.",
+            "Studies have associated frequent UPF consumption with increased risk of obesity and metabolic issues, poor gut health due to disruption of the microbiome, higher rates of anxiety and depression, cardiovascular disease, and even some cancers — though research is ongoing.",
+            "One key reason: UPFs are often stripped of fiber, micronutrients, and the food matrix that helps your body regulate hunger, blood sugar, and satiety. You eat more, absorb less nutrition, and your body's signals get disrupted."
+          ]
+        },
+        {
+          "heading": "4. The label trap",
+          "paragraphs": [
+            "The packaging of ultra-processed snacks is designed to reassure. \"No artificial colors.\" \"Source of fiber.\" \"Vegan.\" These claims can be technically true while the product is still heavily engineered.",
+            "Meanwhile, the ingredients list — which is where the real story lives — is often long, complex, and full of items the average person doesn't recognize."
+          ]
+        }
+      ],
+      "hiddenTitle": "The hidden problem: it's not about one ingredient",
+      "hiddenParagraphs": [
+        "When people try to evaluate snacks, they often focus on a single nutrient: sugar, fat, calories, protein. But the ultra-processing framework is different — it's about the degree of industrial transformation the food has undergone, not just its nutrient profile.",
+        "A snack can have \"less sugar\" and still be ultra-processed. It can be \"high in protein\" and still be made from industrial isolates with a dozen additives. The nutrient focus keeps you looking at individual trees while missing the forest."
+      ],
+      "howTitle": "How to choose better snacks",
+      "howItems": [
+        "Read the ingredients list, not just the front of the pack",
+        "Look for short ingredient lists with recognizable, whole foods",
+        "Be skeptical of health claims — they don't equal nutritional quality",
+        "Choose snacks close to their natural form: nuts, fruit, yogurt, eggs",
+        "If you can't tell what something is made of, that's a signal"
+      ],
+      "howNote": "This doesn't mean you can never eat a granola bar. It means understanding what you're actually eating — and making that choice consciously.",
+      "takeaway": "The \"healthy\" label on a snack is marketing. The ingredients list is information. Learning to read the second one is one of the most powerful things you can do for your long-term health."
+    },
+    "additives": {
+      "imageAlt": "Food additives and ingredient labels",
+      "title": "Food Additives & E-Numbers: Safe or Scary?",
+      "paragraphs": [
+        "Have you ever noticed an E-number on a food label and wondered whether it is dangerous?",
+        "We live in an age of advanced technology, where we can easily research any information online and encounter both accurate and misleading content. But what do the labels E300, E621, or E250 on product packaging in supermarkets really represent?",
+        "Many people immediately think, \"This must be something full of chemicals and harmful to health,\" but the truth is slightly different.",
+        "E-numbers are codes used in Europe to identify food additives — the letter \"E\" stands for Europe. This means that the additive has been scientifically tested, approved for use, and assigned a safe consumption level. In other words, everything with an E-number has passed safety evaluations.",
+        "What are \"additives\"? Additives are substances added to food to extend shelf life, enhance color, improve and intensify flavor, or stabilize texture (emulsifiers). They are not acutely toxic, but their long-term and frequent consumption is still a subject of scientific discussion.",
+        "It is important to note that not all additives are artificial — some are natural. For example, E300 is vitamin C, and E330 is citric acid found in lemons.",
+        "Not every E-number is harmful, but every E-number has been tested by scientific bodies such as the European Food Safety Authority (EFSA) and has a defined safe level of consumption.",
+        "However, even though they are generally safe, there are a few important considerations: quantity matters (even water can be harmful in excessive amounts); some individuals are sensitive (allergies, intolerances, or reactions to certain colorants); and not all E-numbers are \"healthy\" — safe does not necessarily mean beneficial.",
+        "Flavor enhancers or sweeteners may be approved and safe within certain limits, but that does not mean they are a good choice for everyday consumption. Some additives have already been banned — the list is continuously updated and unsafe substances are removed.",
+        "This is a myth: everything we eat is, in one way or another, made up of chemical compounds — even natural foods. The issue is not the E-number itself, but rather the level of food processing, the quantity consumed, and overall dietary habits.",
+        "Although E-numbers are safety-tested, certain additives are associated with potential side effects, especially when consumed frequently and in large amounts. These additives are not \"toxic,\" but they are not ideal for frequent, everyday consumption. Attention should be paid to quantity, source (processed foods), and individual sensitivity.",
+        "E-numbers are a labeling system, not a warning sign. They indicate that ingredients have been tested. \"Safe\" means there is no direct risk within a certain quantity, but it does not necessarily mean the ingredient is beneficial or should be consumed regularly.",
+        "Instead of focusing on individual E-numbers, it is more important to consider the level of food processing, frequency of consumption, and overall dietary habits. The bigger issue is not the additives themselves, but their frequent intake through highly processed foods.",
+        "Although regulated and generally safe, informed and mindful choices are essential — because a single additive is rarely the problem, but habits make a significant difference."
+      ],
+      "classificationTitle": "Classification of E-numbers",
+      "classification": [
+        "E100–199 – Colors",
+        "E200–299 – Preservatives",
+        "E300–399 – Antioxidants",
+        "E400–499 – Stabilizers and emulsifiers",
+        "E600–699 – Flavor enhancers",
+        "E900+ – Sweeteners and others"
+      ],
+      "tableTitle": "Quick reference overview",
+      "tableGreenTitle": "Generally safe and often natural",
+      "tableGreenRows": [
+        { "code": "E300", "name": "Vitamin C", "type": "Antioxidant", "note": "Natural, supports immunity" },
+        { "code": "E330", "name": "Citric acid", "type": "Antioxidant", "note": "Naturally found in fruits" },
+        { "code": "E160a", "name": "Beta-carotene", "type": "Color", "note": "Provitamin A" },
+        { "code": "E322", "name": "Lecithin", "type": "Emulsifier", "note": "From eggs / soy" },
+        { "code": "E440", "name": "Pectin", "type": "Stabilizer", "note": "Natural plant fiber" }
+      ],
+      "tableYellowTitle": "Controversial / require attention",
+      "tableYellowRows": [
+        { "code": "E621", "name": "Monosodium glutamate", "type": "Flavor enhancer", "note": "Possible sensitivity" },
+        { "code": "E250", "name": "Sodium nitrite", "type": "Preservative", "note": "Linked to compounds in processed meat" },
+        { "code": "E251–252", "name": "Nitrates", "type": "Preservatives", "note": "Concern with frequent consumption" },
+        { "code": "E951", "name": "Aspartame", "type": "Sweetener", "note": "Subject of scientific debate" },
+        { "code": "E950", "name": "Acesulfame K", "type": "Sweetener", "note": "Common in diet drinks" },
+        { "code": "E102", "name": "Tartrazine", "type": "Color", "note": "Possible effects in children" },
+        { "code": "E110, E122, E124", "name": "Artificial colors", "type": "Colors", "note": "Linked to hyperactivity" }
+      ]
+    }
   }
 }

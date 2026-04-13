@@ -45,16 +45,30 @@ export function Header() {
           >
             <Link
               to="/about"
-              className="text-sm font-medium text-stone-600 transition-colors hover:text-stone-900"
+              className={cn(
+                'text-sm font-medium transition-colors',
+                scrolled
+                  ? 'text-stone-600 hover:text-stone-900'
+                  : 'text-stone-700 hover:text-stone-900',
+              )}
             >
               {t('nav.about')}
             </Link>
-            {/* Language switcher — two static pills */}
+            <a
+              href="/#download"
+              className={cn(
+                'rounded-full px-4 py-2 text-sm font-medium transition-all sm:px-5',
+                scrolled
+                  ? 'bg-stone-900 text-white hover:opacity-90'
+                  : 'bg-stone-900 text-white hover:opacity-90',
+              )}
+            >
+              {t('nav.getApp')}
+            </a>
+            {/* Language switcher — two static pills, always at the far right */}
             <div className={cn(
               'flex items-center rounded-full border text-xs font-semibold uppercase tracking-wide overflow-hidden',
-              scrolled
-                ? 'border-stone-200'
-                : 'border-white/25',
+              scrolled ? 'border-stone-200' : 'border-stone-300',
             )}>
               {(['en', 'mk'] as const).map((lang) => (
                 <button
@@ -64,24 +78,14 @@ export function Header() {
                   className={cn(
                     'px-3 py-1.5 transition-colors',
                     i18n.language === lang
-                      ? scrolled
-                        ? 'bg-stone-900 text-white'
-                        : 'bg-white text-stone-900'
-                      : scrolled
-                        ? 'text-stone-500 hover:text-stone-800'
-                        : 'text-white/70 hover:text-white',
+                      ? 'bg-stone-900 text-white'
+                      : 'text-stone-500 hover:text-stone-900',
                   )}
                 >
                   {lang.toUpperCase()}
                 </button>
               ))}
             </div>
-            <a
-              href="/#download"
-              className="rounded-full bg-stone-900 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:px-5"
-            >
-              {t('nav.getApp')}
-            </a>
           </nav>
         </div>
       </div>

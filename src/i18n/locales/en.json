@@ -92,16 +92,12 @@
     "copyright": "All rights reserved.",
     "cols": [
       {
-        "title": "Product",
-        "links": ["Features", "Pricing", "Updates"]
-      },
-      {
-        "title": "Company",
-        "links": ["About", "Careers", "Press"]
-      },
-      {
         "title": "Legal",
-        "links": ["Privacy", "Terms", "Contact"]
+        "links": ["Privacy Policy", "Terms and Conditions"]
+      },
+      {
+        "title": "Support",
+        "links": ["Contact Us"]
       }
     ]
   },

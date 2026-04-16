@@ -5,6 +5,8 @@ import { HomePage } from './pages/HomePage'
 import { MicroplasticsPage } from './pages/MicroplasticsPage'
 import { AdditivesPage } from './pages/AdditivesPage'
 import { SnacksPage } from './pages/SnacksPage'
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'
+import { TermsAndConditionsPage } from './pages/TermsAndConditionsPage'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/research/microplastics" element={<MicroplasticsPage />} />
           <Route path="/research/additives" element={<AdditivesPage />} />
           <Route path="/research/snacks" element={<SnacksPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

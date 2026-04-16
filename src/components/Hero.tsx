@@ -6,7 +6,7 @@ function AppStoreButtons() {
   return (
     <div
       id="download"
-      className="flex flex-wrap items-center justify-center gap-3 pt-2"
+      className="flex flex-wrap items-center justify-center gap-3 scroll-mt-28 pt-2 sm:scroll-mt-32"
     >
       <a
         href="#"

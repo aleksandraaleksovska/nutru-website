@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import logoMark from '../assets/logo.png'
 import { cn } from '../lib/cn'
@@ -7,6 +7,7 @@ import { cn } from '../lib/cn'
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const { t, i18n } = useTranslation()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -27,7 +28,7 @@ export function Header() {
       <div className="mx-auto h-16 max-w-6xl sm:h-[4.25rem]">
         <div className="flex h-full items-center justify-between px-5 sm:px-8">
           <Link
-            to="/"
+            to="/#top"
             className="flex items-center opacity-100 transition-opacity hover:opacity-80"
             aria-label="Nutru home"
           >
@@ -45,6 +46,11 @@ export function Header() {
           >
             <Link
               to="/about"
+              onClick={() => {
+                requestAnimationFrame(() => {
+                  window.scrollTo({ top: 0, behavior: 'instant' })
+                })
+              }}
               className={cn(
                 'text-sm font-medium transition-colors',
                 scrolled
@@ -54,8 +60,14 @@ export function Header() {
             >
               {t('nav.about')}
             </Link>
-            <a
-              href="/#download"
+            <Link
+              to="/#download"
+              onClick={() => {
+                if (pathname !== '/') return
+                requestAnimationFrame(() => {
+                  document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
+                })
+              }}
               className={cn(
                 'rounded-full px-4 py-2 text-sm font-medium transition-all sm:px-5',
                 scrolled
@@ -64,7 +76,7 @@ export function Header() {
               )}
             >
               {t('nav.getApp')}
-            </a>
+            </Link>
             {/* Language switcher — EN | MK with a plain divider, no border */}
             <div className="flex items-center gap-0 text-xs font-semibold uppercase tracking-wide">
               {(['en', 'mk'] as const).map((lang, idx) => (

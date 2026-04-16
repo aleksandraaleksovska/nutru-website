@@ -14,6 +14,13 @@ export function HomePage() {
       requestAnimationFrame(() => {
         document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
       })
+      return
+    }
+
+    if (hash === '#top') {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      })
     }
   }, [hash])
 

@@ -187,6 +187,15 @@ export function PrivacyPolicyPage() {
                 nutru.app@gmail.com
               </a>
             </p>
+            <p>
+              За барање бришење на сметка, посетете:{' '}
+              <a
+                className="text-stone-900 underline decoration-stone-300 underline-offset-2"
+                href="https://nutru.app/delete-account"
+              >
+                https://nutru.app/delete-account
+              </a>
+            </p>
           </section>
         </div>
       </article>
@@ -373,6 +382,15 @@ export function PrivacyPolicyPage() {
             📧 Email:{' '}
             <a className="text-stone-900 underline decoration-stone-300 underline-offset-2" href="mailto:nutru.app@gmail.com">
               nutru.app@gmail.com
+            </a>
+          </p>
+          <p>
+            To request account deletion, visit:{' '}
+            <a
+              className="text-stone-900 underline decoration-stone-300 underline-offset-2"
+              href="https://nutru.app/delete-account"
+            >
+              https://nutru.app/delete-account
             </a>
           </p>
         </section>

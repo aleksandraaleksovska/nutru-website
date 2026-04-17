@@ -182,9 +182,9 @@ export function PrivacyPolicyPage() {
               e-mail:{' '}
               <a
                 className="text-stone-900 underline decoration-stone-300 underline-offset-2"
-                href="mailto:nutru.app@gmail.com"
+                href="mailto:nutruapp@gmail.com"
               >
-                nutru.app@gmail.com
+                nutruapp@gmail.com
               </a>
             </p>
             <p>
@@ -380,8 +380,8 @@ export function PrivacyPolicyPage() {
           </p>
           <p>
             📧 Email:{' '}
-            <a className="text-stone-900 underline decoration-stone-300 underline-offset-2" href="mailto:nutru.app@gmail.com">
-              nutru.app@gmail.com
+            <a className="text-stone-900 underline decoration-stone-300 underline-offset-2" href="mailto:nutruapp@gmail.com">
+              nutruapp@gmail.com
             </a>
           </p>
           <p>

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 // href values stay static; labels come from i18n
 const colHrefs = [
   ['/privacy-policy', '/terms-and-conditions'],
-  ['mailto:nutru.app@gmail.com'],
+  ['mailto:nutruapp@gmail.com'],
 ]
 
 export function Footer() {

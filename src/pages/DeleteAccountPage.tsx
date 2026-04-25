@@ -33,7 +33,7 @@ export function DeleteAccountPage() {
               className="text-stone-900 underline decoration-stone-300 underline-offset-2"
               href="mailto:support@nutru.app"
             >
-              support@nutru.app
+              nutruapp@gmail.com
             </a>
             .
           </p>

@@ -6,6 +6,7 @@ import { cn } from '../lib/cn'
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { t, i18n } = useTranslation()
   const { pathname } = useLocation()
 
@@ -15,6 +16,21 @@ export function Header() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [pathname])
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false)
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [mobileMenuOpen])
 
   return (
     <header
@@ -40,26 +56,7 @@ export function Header() {
               className="h-[1.26rem] w-auto sm:h-[1.44rem]"
             />
           </Link>
-          <nav
-            className="flex items-center gap-4 sm:gap-6"
-            aria-label="Primary"
-          >
-            <Link
-              to="/about"
-              onClick={() => {
-                requestAnimationFrame(() => {
-                  window.scrollTo({ top: 0, behavior: 'instant' })
-                })
-              }}
-              className={cn(
-                'text-sm font-medium transition-colors',
-                scrolled
-                  ? 'text-stone-600 hover:text-stone-900'
-                  : 'text-stone-700 hover:text-stone-900',
-              )}
-            >
-              {t('nav.about')}
-            </Link>
+          <nav className="flex items-center gap-3 sm:gap-6" aria-label="Primary">
             <Link
               to="/#download"
               onClick={() => {
@@ -77,15 +74,30 @@ export function Header() {
             >
               {t('nav.getApp')}
             </Link>
+            <Link
+              to="/about"
+              onClick={() => {
+                requestAnimationFrame(() => {
+                  window.scrollTo({ top: 0, behavior: 'instant' })
+                })
+              }}
+              className={cn(
+                'hidden text-sm font-medium transition-colors sm:inline-flex',
+                scrolled
+                  ? 'text-stone-600 hover:text-stone-900'
+                  : 'text-stone-700 hover:text-stone-900',
+              )}
+            >
+              {t('nav.about')}
+            </Link>
             {/* Language switcher — EN | MK with a plain divider, no border */}
-            <div className="flex items-center gap-0 text-xs font-semibold uppercase tracking-wide">
+            <div className="hidden items-center gap-0 text-xs font-semibold uppercase tracking-wide sm:flex">
               {(['en', 'mk'] as const).map((lang, idx) => (
-                <>
+                <span key={lang} className="flex items-center">
                   {idx > 0 && (
-                    <span key={`sep-${lang}`} className="text-stone-300 select-none">|</span>
+                    <span className="select-none text-stone-300">|</span>
                   )}
                   <button
-                    key={lang}
                     onClick={() => i18n.changeLanguage(lang)}
                     aria-label={`Switch to ${lang.toUpperCase()}`}
                     className={cn(
@@ -97,12 +109,72 @@ export function Header() {
                   >
                     {lang.toUpperCase()}
                   </button>
-                </>
+                </span>
               ))}
             </div>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+              className={cn(
+                'inline-flex h-9 w-9 items-center justify-center rounded-full border transition-colors sm:hidden',
+                scrolled
+                  ? 'border-stone-300 bg-white text-stone-900 hover:bg-stone-50'
+                  : 'border-stone-300/70 bg-white/80 text-stone-900 hover:bg-white',
+              )}
+            >
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
+                ) : (
+                  <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
+                )}
+              </svg>
+            </button>
           </nav>
         </div>
       </div>
+      {mobileMenuOpen && (
+        <div className="border-t border-stone-200 bg-white/95 px-5 py-4 shadow-sm backdrop-blur-sm sm:hidden">
+          <div className="mx-auto max-w-6xl space-y-4">
+            <Link
+              to="/about"
+              onClick={() => {
+                setMobileMenuOpen(false)
+                requestAnimationFrame(() => {
+                  window.scrollTo({ top: 0, behavior: 'instant' })
+                })
+              }}
+              className="block text-sm font-medium text-stone-700 transition-colors hover:text-stone-900"
+            >
+              {t('nav.about')}
+            </Link>
+            <div className="flex items-center gap-0 text-xs font-semibold uppercase tracking-wide">
+              {(['en', 'mk'] as const).map((lang, idx) => (
+                <span key={`mobile-${lang}`} className="flex items-center">
+                  {idx > 0 && <span className="select-none text-stone-300">|</span>}
+                  <button
+                    onClick={() => {
+                      i18n.changeLanguage(lang)
+                      setMobileMenuOpen(false)
+                    }}
+                    aria-label={`Switch to ${lang.toUpperCase()}`}
+                    className={cn(
+                      'px-2 py-1 transition-colors',
+                      i18n.language === lang
+                        ? 'text-stone-900'
+                        : 'text-stone-400 hover:text-stone-700',
+                    )}
+                  >
+                    {lang.toUpperCase()}
+                  </button>
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

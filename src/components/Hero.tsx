@@ -64,7 +64,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-5 text-nowrap text-4xl font-semibold tracking-tight text-stone-900 sm:text-5xl sm:leading-[1.08] md:text-[3.25rem]"
+          className="mx-auto mt-5 max-w-[15ch] text-balance text-4xl font-semibold tracking-tight text-stone-900 sm:max-w-none sm:text-nowrap sm:text-5xl sm:leading-[1.08] md:text-[3.25rem]"
         >
           {t('hero.headline')}
         </motion.h1>

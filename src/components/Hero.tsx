@@ -9,7 +9,9 @@ function AppStoreButtons() {
       className="flex flex-wrap items-center justify-center gap-3 scroll-mt-28 pt-2 sm:scroll-mt-32"
     >
       <a
-        href="#"
+        href="https://apps.apple.com/at/app/nutru/id6761933899"
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex h-12 items-center gap-2.5 rounded-full bg-stone-900 px-5 text-sm font-medium text-white transition-opacity hover:opacity-90"
       >
         <svg
@@ -26,7 +28,9 @@ function AppStoreButtons() {
         </span>
       </a>
       <a
-        href="#"
+        href="https://play.google.com/store/apps/details?id=com.nutru.app"
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex h-12 items-center gap-2.5 rounded-full border border-stone-300 bg-white px-5 text-sm font-medium text-stone-900 transition-colors hover:border-stone-400"
       >
         <svg

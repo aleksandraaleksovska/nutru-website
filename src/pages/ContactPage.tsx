@@ -1,5 +1,5 @@
 import { type FormEvent, useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { LocaleLink } from '../components/LocaleLink'
 import { useTranslation } from 'react-i18next'
 
 type FormState = {
@@ -49,7 +49,7 @@ export function ContactPage() {
   return (
     <article className="min-h-screen bg-[var(--color-surface)]">
       <div className="mx-auto max-w-3xl px-5 pb-20 pt-28 sm:px-8 sm:pb-28 sm:pt-32">
-        <Link
+        <LocaleLink
           to="/"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-500 transition-colors hover:text-stone-900"
         >
@@ -57,7 +57,7 @@ export function ContactPage() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
           {t('articles.back')}
-        </Link>
+        </LocaleLink>
 
         <div className="mt-8 space-y-4">
           <h1 className="text-3xl font-semibold leading-tight tracking-tight text-stone-900 sm:text-4xl">

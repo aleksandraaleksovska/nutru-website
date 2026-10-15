@@ -102,6 +102,8 @@
     ]
   },
   "about": {
+    "h1": "About Nutru",
+    "factual": "Nutru is a food product information app. It reads a barcode or label and explains ingredients, additives, allergens, and contaminants in plain language.",
     "s1":  "Imagine a world where understanding your food is effortless.",
     "s2a": "Clean ingredients.",
     "s2b": "Clear signals.",
@@ -150,10 +152,20 @@
     "submit": "Send message",
     "success": "Your email draft is ready. Please send it from your email app."
   },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page does not exist.",
+    "home": "Back to home"
+  },
   "articles": {
     "back": "Back",
     "microplastics": {
       "imageAlt": "Close-up of a water bottle",
+      "author": "Nutru",
+      "date": "2026-04-13",
+      "dateModified": "2026-10-15",
+      "dateLabel": "April 13, 2026",
+      "sourcesTitle": "Sources",
       "title": "Microplastics in Bottled Water: The Hidden Truth in Every Sip",
       "paragraphs": [
         "You grab a bottle of water thinking it's the cleanest, safest option available. It's sealed, portable, and widely trusted. But what if that same bottle contains tiny plastic particles you can't even see?",
@@ -162,10 +174,25 @@
         "Microplastics aren't just in bottled water — they're everywhere: oceans, soil, food, and even the air. Plastic bottles are part of a much larger environmental issue. Millions are produced every minute worldwide, and many end up as waste, breaking down into microplastics over time.",
         "You can make smarter choices: switch to tap water if it's safe in your area, use reusable bottles made of glass or stainless steel, avoid leaving plastic bottles in heat, and filter your water for an extra layer of precaution. Small changes can reduce both your exposure and your environmental footprint.",
         "Microplastics in bottled water are a reminder that convenience often comes with hidden trade-offs. While research is ongoing, awareness is the first step toward better choices."
+      ],
+      "sources": [
+        {
+          "label": "Mason, Welch, and Neratko. Synthetic Polymer Contamination in Bottled Water. Frontiers in Chemistry, 2018.",
+          "href": "https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2018.00407/full"
+        },
+        {
+          "label": "Qian et al. Rapid single-particle chemical imaging of nanoplastics by SRS microscopy. PNAS, 2024.",
+          "href": "https://www.pnas.org/doi/10.1073/pnas.2300582121"
+        }
       ]
     },
     "snacks": {
       "imageAlt": "Packaged snack products on a shelf",
+      "author": "Nutru",
+      "date": "2026-04-13",
+      "dateModified": "2026-10-15",
+      "dateLabel": "April 13, 2026",
+      "sourcesTitle": "Sources",
       "title": "Most \"Healthy\" Snacks Are Ultra-Processed — Here's Why That Matters",
       "intro": [
         "You reach for a granola bar, a rice cake, or a bag of veggie chips, feeling good about your choice. The packaging says \"natural,\" \"high protein,\" or \"only 100 calories.\" But what's actually inside?",
@@ -216,10 +243,25 @@
         "If you can't tell what something is made of, that's a signal"
       ],
       "howNote": "This doesn't mean you can never eat a granola bar. It means understanding what you're actually eating — and making that choice consciously.",
-      "takeaway": "The \"healthy\" label on a snack is marketing. The ingredients list is information. Learning to read the second one is one of the most powerful things you can do for your long-term health."
+      "takeaway": "The \"healthy\" label on a snack is marketing. The ingredients list is information. Learning to read the second one is one of the most powerful things you can do for your long-term health.",
+      "sources": [
+        {
+          "label": "Monteiro et al. Ultra-processed foods, diet quality, and health using the NOVA classification system. FAO, 2019.",
+          "href": "https://www.fao.org/3/ca5644en/ca5644en.pdf"
+        },
+        {
+          "label": "Lane et al. Ultra-processed food exposure and adverse health outcomes: umbrella review. BMJ, 2024.",
+          "href": "https://www.bmj.com/content/384/bmj-2023-077310"
+        }
+      ]
     },
     "additives": {
       "imageAlt": "Food additives and ingredient labels",
+      "author": "Nutru",
+      "date": "2026-04-13",
+      "dateModified": "2026-10-15",
+      "dateLabel": "April 13, 2026",
+      "sourcesTitle": "Sources",
       "title": "Food Additives & E-Numbers: Safe or Scary?",
       "paragraphs": [
         "Have you ever noticed an E-number on a food label and wondered whether it is dangerous?",
@@ -264,6 +306,16 @@
         { "code": "E950", "name": "Acesulfame K", "type": "Sweetener", "note": "Common in diet drinks" },
         { "code": "E102", "name": "Tartrazine", "type": "Color", "note": "Possible effects in children" },
         { "code": "E110, E122, E124", "name": "Artificial colors", "type": "Colors", "note": "Linked to hyperactivity" }
+      ],
+      "sources": [
+        {
+          "label": "European Food Safety Authority. Food additives.",
+          "href": "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+        },
+        {
+          "label": "European Commission. Food additives.",
+          "href": "https://food.ec.europa.eu/food-safety/food-improvement-agents/additives_en"
+        }
       ]
     }
   }

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { LocaleLink } from './LocaleLink'
 
 // href values stay static; labels come from i18n
 const colHrefs = [
@@ -19,9 +19,9 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-10 sm:gap-12 lg:flex-row lg:justify-between">
           <div>
-            <Link to="/" className="text-lg font-semibold tracking-tight text-white">
+            <LocaleLink to="/" className="text-lg font-semibold tracking-tight text-white">
               Nutru
-            </Link>
+            </LocaleLink>
             <p className="mt-4 max-w-xs text-base leading-relaxed text-stone-400 sm:text-sm">
               {t('footer.tagline')}
             </p>
@@ -39,12 +39,12 @@ export function Footer() {
                       return (
                         <li key={li}>
                           {href.startsWith('/') ? (
-                            <Link
+                            <LocaleLink
                               to={href}
                               className="text-sm text-stone-400 transition-colors hover:text-white"
                             >
                               {label}
-                            </Link>
+                            </LocaleLink>
                           ) : (
                             <a
                               href={href}

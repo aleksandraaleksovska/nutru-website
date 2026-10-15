@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -44,21 +44,11 @@ export function FAQSection() {
                     </svg>
                   </motion.span>
                 </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <p className="pb-5 text-sm leading-relaxed text-stone-600">
-                        {item.a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div className={isOpen ? 'grid grid-rows-[1fr]' : 'grid grid-rows-[0fr]'}>
+                  <div className="overflow-hidden">
+                    <p className="pb-5 text-sm leading-relaxed text-stone-600">{item.a}</p>
+                  </div>
+                </div>
               </div>
             )
           })}

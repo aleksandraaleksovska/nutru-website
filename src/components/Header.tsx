@@ -3,12 +3,16 @@ import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import logoMark from '../assets/logo.png'
 import { cn } from '../lib/cn'
+import { localizePath } from '../seo/routes'
+import { useLocale } from '../seo/useLocale'
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { t, i18n } = useTranslation()
-  const { pathname } = useLocation()
+  const [menuPath, setMenuPath] = useState<string | null>(null)
+  const { t } = useTranslation()
+  const { pathname, hash } = useLocation()
+  const locale = useLocale()
+  const mobileMenuOpen = menuPath === pathname
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -18,14 +22,10 @@ export function Header() {
   }, [])
 
   useEffect(() => {
-    setMobileMenuOpen(false)
-  }, [pathname])
-
-  useEffect(() => {
     if (!mobileMenuOpen) return
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMobileMenuOpen(false)
+      if (event.key === 'Escape') setMenuPath(null)
     }
 
     window.addEventListener('keydown', onKeyDown)
@@ -44,7 +44,7 @@ export function Header() {
       <div className="mx-auto h-16 max-w-6xl sm:h-[4.25rem]">
         <div className="flex h-full items-center justify-between px-5 sm:px-8">
           <Link
-            to="/#top"
+            to={localizePath(locale, '/#top')}
             className="flex items-center opacity-100 transition-opacity hover:opacity-80"
             aria-label="Nutru home"
           >
@@ -58,7 +58,7 @@ export function Header() {
           </Link>
           <nav className="flex items-center gap-3 sm:gap-6" aria-label="Primary">
             <Link
-              to="/#download"
+              to={localizePath(locale, '/#download')}
               onClick={() => {
                 if (pathname !== '/') return
                 requestAnimationFrame(() => {
@@ -75,7 +75,7 @@ export function Header() {
               {t('nav.getApp')}
             </Link>
             <Link
-              to="/about"
+              to={localizePath(locale, '/about')}
               onClick={() => {
                 requestAnimationFrame(() => {
                   window.scrollTo({ top: 0, behavior: 'instant' })
@@ -97,24 +97,25 @@ export function Header() {
                   {idx > 0 && (
                     <span className="select-none text-stone-300">|</span>
                   )}
-                  <button
-                    onClick={() => i18n.changeLanguage(lang)}
+                  <Link
+                    to={localizePath(lang, `${pathname}${hash}`)}
+                    hrefLang={lang}
                     aria-label={`Switch to ${lang.toUpperCase()}`}
                     className={cn(
                       'px-2 py-1 transition-colors',
-                      i18n.language === lang
+                      locale === lang
                         ? 'text-stone-900'
                         : 'text-stone-400 hover:text-stone-700',
                     )}
                   >
                     {lang.toUpperCase()}
-                  </button>
+                  </Link>
                 </span>
               ))}
             </div>
             <button
               type="button"
-              onClick={() => setMobileMenuOpen((open) => !open)}
+              onClick={() => setMenuPath((current) => (current === pathname ? null : pathname))}
               aria-label="Toggle menu"
               aria-expanded={mobileMenuOpen}
               className={cn(
@@ -139,9 +140,9 @@ export function Header() {
         <div className="border-t border-stone-200 bg-white/95 px-5 py-4 shadow-sm backdrop-blur-sm sm:hidden">
           <div className="mx-auto max-w-6xl space-y-4">
             <Link
-              to="/about"
+              to={localizePath(locale, '/about')}
               onClick={() => {
-                setMobileMenuOpen(false)
+                setMenuPath(null)
                 requestAnimationFrame(() => {
                   window.scrollTo({ top: 0, behavior: 'instant' })
                 })
@@ -154,21 +155,20 @@ export function Header() {
               {(['en', 'mk'] as const).map((lang, idx) => (
                 <span key={`mobile-${lang}`} className="flex items-center">
                   {idx > 0 && <span className="select-none text-stone-300">|</span>}
-                  <button
-                    onClick={() => {
-                      i18n.changeLanguage(lang)
-                      setMobileMenuOpen(false)
-                    }}
+                  <Link
+                    to={localizePath(lang, `${pathname}${hash}`)}
+                    hrefLang={lang}
                     aria-label={`Switch to ${lang.toUpperCase()}`}
+                    onClick={() => setMenuPath(null)}
                     className={cn(
                       'px-2 py-1 transition-colors',
-                      i18n.language === lang
+                      locale === lang
                         ? 'text-stone-900'
                         : 'text-stone-400 hover:text-stone-700',
                     )}
                   >
                     {lang.toUpperCase()}
-                  </button>
+                  </Link>
                 </span>
               ))}
             </div>

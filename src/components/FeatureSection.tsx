@@ -1,6 +1,8 @@
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import nutruScanVideo from '../assets/nutru-scan-video.mp4'
+import nutruScanPoster from '../assets/nutru-scan-poster.webp'
 
 const bullets = [
   {
@@ -18,15 +20,44 @@ const bullets = [
 ]
 
 function FeaturePhone() {
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [active, setActive] = useState(false)
+  const [showControls, setShowControls] = useState(false)
+
+  useEffect(() => {
+    const node = wrapRef.current
+    if (!node) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) setActive(true)
+      },
+      { rootMargin: '200px' },
+    )
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!active) return
+    const video = videoRef.current
+    if (!video) return
+    void video.play().catch(() => setShowControls(true))
+  }, [active])
+
   return (
-    <div className="relative mx-auto w-[min(15rem,70vw)] sm:mx-0 sm:w-72">
+    <div ref={wrapRef} className="relative mx-auto w-[min(15rem,70vw)] sm:mx-0 sm:w-72">
       <video
-        src={nutruScanVideo}
-        autoPlay
-        loop
+        ref={videoRef}
+        poster={nutruScanPoster}
+        src={active ? nutruScanVideo : undefined}
         muted
+        loop
         playsInline
-        className="w-full h-auto rounded-[2rem] shadow-[0_28px_56px_-20px_rgba(0,0,0,0.3)]"
+        preload="none"
+        controls={showControls}
+        className="aspect-[480/1000] w-full rounded-[2rem] bg-stone-200 object-cover shadow-[0_28px_56px_-20px_rgba(0,0,0,0.3)]"
       />
     </div>
   )

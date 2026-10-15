@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { LocaleLink } from './LocaleLink'
 import { useTranslation } from 'react-i18next'
-import blogMicro from '../assets/blog-micro.jpg'
-import blogAdditives from '../assets/blog-additives.jpg'
-import blogSnacks from '../assets/blog-snacks.jpg'
+import blogMicro from '../assets/blog-micro.webp'
+import blogAdditives from '../assets/blog-additives.webp'
+import blogSnacks from '../assets/blog-snacks.webp'
 
 const articleImages = [
   { image: blogMicro, href: '/research/microplastics' },
@@ -51,7 +51,7 @@ export function ResearchSection() {
               }}
               className="group overflow-hidden rounded-2xl bg-white shadow-[0_1px_0_rgba(0,0,0,0.06)] ring-1 ring-stone-200/80"
             >
-              <Link to={articleImages[i].href} className="block">
+              <LocaleLink to={articleImages[i].href} className="block">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={articleImages[i].image}
@@ -63,7 +63,7 @@ export function ResearchSection() {
                     {a.title}
                   </h3>
                 </div>
-              </Link>
+              </LocaleLink>
             </motion.article>
           ))}
         </div>

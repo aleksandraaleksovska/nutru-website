@@ -7,7 +7,7 @@ export function Seo() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    applyRouteMeta(matchRoute(pathname))
+    applyRouteMeta(matchRoute(pathname, window.location.origin))
   }, [pathname])
 
   return null

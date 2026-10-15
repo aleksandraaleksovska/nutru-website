@@ -235,7 +235,7 @@ function pageByBarePath(barePath: string): PageDef | undefined {
   return PAGES.find((page) => page.id !== 'not-found' && page.path === barePath)
 }
 
-export function matchRoute(pathname: string): RouteMeta {
+export function matchRoute(pathname: string, assetOrigin = SITE_ORIGIN): RouteMeta {
   const path = normalizePathname(splitHash(pathname).pathname)
   const locale = localeFromPath(path)
   const bare = stripLocale(path)
@@ -243,6 +243,7 @@ export function matchRoute(pathname: string): RouteMeta {
   const copy = COPY[locale][page.id]
   const localized = page.id === 'not-found' ? path : localizePath(locale, page.path)
   const indexable = page.indexable
+  const imageOrigin = assetOrigin.replace(/\/$/, '')
   return {
     id: page.id,
     locale,
@@ -251,7 +252,7 @@ export function matchRoute(pathname: string): RouteMeta {
     description: copy.description,
     canonical: indexable ? absoluteUrl(localized) : undefined,
     indexable,
-    ogImage: absoluteUrl(page.ogImage),
+    ogImage: `${imageOrigin}${page.ogImage}`,
     ogType: page.kind === 'article' ? 'article' : 'website',
     hreflang: indexable ? hreflangFor(page.path) : [],
     kind: page.kind,

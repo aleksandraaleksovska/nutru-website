@@ -2,7 +2,9 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { renderHeadHtml } from '../src/seo/head.ts'
-import { ROBOTS_TXT, matchRoute, prerenderTargets, renderSitemap } from '../src/seo/routes.ts'
+import { ROBOTS_TXT, SITE_ORIGIN, matchRoute, prerenderTargets, renderSitemap } from '../src/seo/routes.ts'
+
+const assetOrigin = (process.env.DEPLOY_PRIME_URL || process.env.URL || SITE_ORIGIN).replace(/\/$/, '')
 
 const dist = path.resolve('dist')
 const templatePath = path.join(dist, 'index.html')
@@ -16,7 +18,7 @@ const serverEntry = pathToFileURL(path.join(dist, 'server', 'entry-server.js')).
 const { render } = (await import(serverEntry)) as { render: (url: string) => string }
 
 function apply(body: string, pathname: string) {
-  const meta = matchRoute(pathname)
+  const meta = matchRoute(pathname, assetOrigin)
   const head = renderHeadHtml(meta)
   const html = template
     .replace(/<html lang="[^"]*">/, `<html lang="${meta.locale}">`)
@@ -43,7 +45,7 @@ function writePage(pathname: string, file: string) {
 
 for (const target of prerenderTargets()) {
   const body = writePage(target.path, target.file)
-  const meta = matchRoute(target.path)
+  const meta = matchRoute(target.path, assetOrigin)
   if (meta.locale === 'mk' && !body.includes('Преземи ја апликацијата')) {
     throw new Error(`Macedonian chrome missing from ${target.path}`)
   }
@@ -58,3 +60,4 @@ fs.writeFileSync(path.join(dist, 'sitemap.xml'), renderSitemap())
 fs.writeFileSync(path.join(dist, 'robots.txt'), ROBOTS_TXT)
 
 console.log(`Prerendered ${prerenderTargets().length} routes plus 404.html`)
+console.log(`Open Graph images: ${assetOrigin}`)

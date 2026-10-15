@@ -1,12 +1,14 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import blogMicroWide from '../assets/blog-micro-wide.jpg'
+import blogMicroWide from '../assets/blog-micro-wide.webp'
+import { ArticleByline, ArticleSources, type ArticleSource } from '../components/ArticleExtras'
+import { LocaleLink } from '../components/LocaleLink'
 
 export function MicroplasticsPage() {
   const { t } = useTranslation()
   const paragraphs = t('articles.microplastics.paragraphs', { returnObjects: true }) as string[]
+  const sources = t('articles.microplastics.sources', { returnObjects: true }) as ArticleSource[]
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
@@ -22,7 +24,7 @@ export function MicroplasticsPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Link
+          <LocaleLink
             to="/"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-500 transition-colors hover:text-stone-900"
           >
@@ -30,7 +32,7 @@ export function MicroplasticsPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             {t('articles.back')}
-          </Link>
+          </LocaleLink>
         </motion.div>
 
         {/* Eyebrow */}
@@ -53,6 +55,11 @@ export function MicroplasticsPage() {
         >
           {t('articles.microplastics.title')}
         </motion.h1>
+        <ArticleByline
+          author={t('articles.microplastics.author')}
+          date={t('articles.microplastics.date')}
+          dateLabel={t('articles.microplastics.dateLabel')}
+        />
 
         {/* Image — contained, rounded, modest height */}
         <motion.div
@@ -82,6 +89,7 @@ export function MicroplasticsPage() {
             </motion.p>
           ))}
         </div>
+        <ArticleSources title={t('articles.microplastics.sourcesTitle')} sources={sources} />
 
       </div>
     </article>

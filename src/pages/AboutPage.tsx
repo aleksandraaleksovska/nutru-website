@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { LocaleLink } from '../components/LocaleLink'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { AboutStorySection } from '../components/about/AboutStorySection'
@@ -16,6 +16,13 @@ export function AboutPage() {
 
   return (
     <div className="bg-white">
+
+      <AboutStorySection>
+        <h1 className={headline}>{t('about.h1')}</h1>
+        <p className="mx-auto mt-6 max-w-lg text-pretty text-base leading-relaxed text-stone-600 sm:text-lg">
+          {t('about.factual')}
+        </p>
+      </AboutStorySection>
 
       {/* 1 — alone */}
       <AboutStorySection>
@@ -122,12 +129,12 @@ export function AboutPage() {
           viewport={{ once: false, amount: 0.6 }}
           transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Link
+          <LocaleLink
             to="/#download"
             className="inline-flex rounded-full bg-stone-900 px-9 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
           >
             {t('about.cta')}
-          </Link>
+          </LocaleLink>
         </motion.div>
       </AboutStorySection>
 

@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion
 import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cn } from '../lib/cn'
-import webMockup from '../assets/web-mockup.png'
+import webMockup from '../assets/web-mockup.webp'
 
 type CardTone = 'warning' | 'safe' | 'neutral'
 /** Layout side: drives horizontal convergence — right cards move left, left cards move right */

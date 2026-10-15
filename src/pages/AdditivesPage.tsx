@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import blogAdditives from '../assets/blog-additives.jpg'
+import blogAdditives from '../assets/blog-additives.webp'
+import { ArticleByline, ArticleSources, type ArticleSource } from '../components/ArticleExtras'
+import { LocaleLink } from '../components/LocaleLink'
 
 export function AdditivesPage() {
   const { t } = useTranslation()
@@ -22,6 +23,11 @@ export function AdditivesPage() {
     tableGreenRows: { code: string; name: string; type: string; note: string }[]
     tableYellowTitle: string
     tableYellowRows: { code: string; name: string; type: string; note: string }[]
+    author: string
+    date: string
+    dateLabel: string
+    sourcesTitle: string
+    sources: ArticleSource[]
   }
 
   return (
@@ -34,7 +40,7 @@ export function AdditivesPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Link
+          <LocaleLink
             to="/"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-500 transition-colors hover:text-stone-900"
           >
@@ -42,7 +48,7 @@ export function AdditivesPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             {t('articles.back')}
-          </Link>
+          </LocaleLink>
         </motion.div>
 
         {/* Eyebrow */}
@@ -65,6 +71,7 @@ export function AdditivesPage() {
         >
           {content.title}
         </motion.h1>
+        <ArticleByline author={content.author} date={content.date} dateLabel={content.dateLabel} />
 
         {/* Image */}
         <motion.div
@@ -157,6 +164,7 @@ export function AdditivesPage() {
             </table>
           </div>
         </motion.div>
+        <ArticleSources title={content.sourcesTitle} sources={content.sources} />
 
       </div>
     </article>
